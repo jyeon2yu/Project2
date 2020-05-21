@@ -30,12 +30,14 @@ int main(){
 
 //파일 1의 정보를 가져오는 함수 작성
 void filestat1(){
-
+    stat("test1", &stat1);
+    // printf("#inod: %d\n",(int)stat1.st_ino);
 }
 
 //파일 2의 정보를 가져오는 함수 작성
 void filestat2(){
-
+    stat("test2", &stat2);
+    //  printf("#inod: %d\n",(int)stat2.st_ino);
 }
 
 //파일 1의 시간 정보를 가져오는 함수 작성
@@ -60,29 +62,7 @@ void blockcmp(){
 
 //두 개의 파일 수정 날짜를 비교하는 함수 작성
 void datecmp(){
-    time1 = localtime(&stat1.st_mtime);
-    time2 = localtime(&stat2.st_mtime);
 
-    if((time1->tm_mon+1)!=(time2->tm_mon+1)){
-      if((time1->tm_mon+1) > (time2->tm_mon+1)){
-        printf("test1 is early\n");
-      }
-      else{
-	printf("test2 is early\n");
-      }
-
-    }
-    else{
-      if((time1->tm_mday) > (time2->tm_mday)){
-        printf("test1 is early\n");
-      }
-      else if((time1->tm_mday) < (time2->tm_mday)){
-	printf("test2 is early\n");
-      }
-      else{
-	printf("same time\n");
-      }
-    }
 }
 
 //두 개의 파일 수정 시간을 비교하는 함수 작성
