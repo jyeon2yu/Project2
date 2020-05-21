@@ -29,12 +29,14 @@ int main(){
 
 //파일 1의 정보를 가져오는 함수 작성
 void filestat1(){
-    
+    stat("test1", &stat1);
+    // printf("#inod: %d\n",(int)stat1.st_ino);
 }
 
 //파일 2의 정보를 가져오는 함수 작성
 void filestat2(){
-    
+    stat("test2", &stat2);
+    //  printf("#inod: %d\n",(int)stat2.st_ino);
 }
 
 //파일 1의 시간 정보를 가져오는 함수 작성
