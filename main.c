@@ -55,21 +55,7 @@ void sizecmp(){
 
 //두 개의 파일 블락 수를 비교하는 함수 작성
 void blockcmp(){
-    printf("blcok compare\n");
-
-    int size1, size2;
-    size1 = (int)stat1.st_blksize;
-    size2 = (int)stat2.st_blksize;
-
-    if (size1 > size2) {
-        printf("test1 is bigger\n");
-    }
-    else if (size1 < size2) {
-        printf("test2 is bigger\n");
-    }
-    else {
-        printf("sizes are equal\n");
-    }
+    
 }
 
 //두 개의 파일 수정 날짜를 비교하는 함수 작성
@@ -79,5 +65,11 @@ void datecmp(){
 
 //두 개의 파일 수정 시간을 비교하는 함수 작성
 void timecmp(){
-   
+    printf("time compare\n");
+    if (&stat1.st_mtime > & stat2.st_mtime)
+        printf("text1 is early\n");
+    else if (&stat1.st_mtime < &stat2.st_mtime)
+        printf("text2 is early\n");
+    else
+        printf("same time");
 }
